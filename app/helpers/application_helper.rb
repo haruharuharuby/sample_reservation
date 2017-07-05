@@ -9,4 +9,13 @@ module ApplicationHelper
       page_title + "|" + base_title
     end
   end
+
+  def sub_title(page_title='')
+    case page_title
+    when "Home"
+      "予約状況一覧（検索)"
+    when "About"
+      "インストラクター別集計"
+    end
+  end
 end

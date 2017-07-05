@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     admin = Admin.find_by(loginid: params[:session][:loginid].downcase)
     if admin && admin.authenticate(params[:session][:password])
       log_in admin
-      redirect_to admin
+      redirect_to home_path
     else
       flash.now[:danger] = 'ログインIDまたはパスワードが間違っています。'
       render 'new'

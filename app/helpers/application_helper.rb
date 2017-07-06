@@ -16,6 +16,8 @@ module ApplicationHelper
       "予約状況一覧（検索)"
     when "About"
       "インストラクター別集計"
+    when "Resevation"
+      "予約登録"
     end
   end
 end

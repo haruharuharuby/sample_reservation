@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'sessions#new'
-  get 'home', to:'static_pages#home'
+  get '/home', to:'static_pages#home'
   get '/about', to:'static_pages#about'
+  get '/resevation', to:'static_pages#resevation'
   get 'admins/new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

@@ -5,8 +5,26 @@
       <!-- 検索 -->
       <%= form_for(:session, url: login_path) do |f| %>
 
-        <lavel>店舗名</lavel>
-
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>店舗名</th>
+            <td><%= f.collection_select :facility_id, @facility, :facilityid, :facilityname, :include_blank => true %></td>
+            <th>コース名</th>
+            <td><%= f.collection_select :facility_id, @facility, :facilityid, :facilityname, :include_blank => true %></td>
+          </tr>
+          <tr>
+            <th>インストラクター名</th>
+            <td><%= f.collection_select :id, @staff, :id, :name, :include_blank => true %></td>
+            <th>日時</th>
+            <td><%= f.collection_select :facility_id, @facility, :facilityid, :facilityname, :include_blank => true %></td>
+          </tr>
+          <tr>
+            <th>顧客名</th>
+            <td><%= f.collection_select :id, @staff, :id, :name, :include_blank => true %></td>
+          </tr>
+        </tbody>
+      </table>
         <%= f.submit "検索", class: "btn btn-primary" %>
       <% end %>
 

@@ -10,19 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706020117) do
+ActiveRecord::Schema.define(version: 20170706030708) do
 
-  create_table "admins", force: :cascade do |t|
-    t.integer "loginid"
-    t.string "name"
+  create_table "admins", primary_key: ["id", "loginid"], force: :cascade do |t|
+    t.integer "id", null: false
+    t.integer "loginid", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.index ["id", "loginid"], name: "sqlite_autoindex_admins_1", unique: true
   end
 
-  create_table "facilities", force: :cascade do |t|
-    t.integer "facilityid"
-    t.string "facilityname"
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "facilities", primary_key: ["id", "facilityid"], force: :cascade do |t|
+    t.integer "id", null: false
+    t.integer "facilityid", null: false
+    t.string "facilityname", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["id", "facilityid"], name: "sqlite_autoindex_facilities_1", unique: true
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

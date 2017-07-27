@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= full_title(yield(:title)) %></title>
+    <title><%= sub_title(yield(:title)) %></title>
     <%= render 'layouts/setting' %>
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <h2><%= sub_title(yield(:title)) %></h2>
+    <div class="page-title">
+      <h1><%= full_title(yield(:title)) %></h1>
+      <p><%= sub_title(yield(:title)) %></p>
+    </div>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>

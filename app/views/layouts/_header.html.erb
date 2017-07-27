@@ -1,16 +1,17 @@
-<% if logged_in? %>
+
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <nav>
       <div class="collapse navbar-collapse target">
+        <% if logged_in? %>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home", home_path %></li>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Res", resevation_path %></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <li><%= link_to "予約管理", home_path %></li>
+          <li><%= link_to "スタッフ業務", about_path %></li>
+          <li><%= link_to "顧客管理", resevation_path %></li>
+          <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         </ul>
+        <% end %>
       </div>
     </nav>
   </div>
 </header>
-<% end %>

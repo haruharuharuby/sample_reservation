@@ -6,17 +6,19 @@ module ApplicationHelper
     if page_title.empty?
       base_title
     else
-      page_title + "|" + base_title
+      page_title
     end
   end
 
   def sub_title(page_title='')
     case page_title
-    when "Home"
-      "予約状況一覧（検索)"
-    when "About"
-      "インストラクター別集計"
-    when "Resevation"
+    when "Log in"
+      "ログイン"
+    when "Reservation Management"
+      "予約管理"
+    when "Staff service"
+      "スタッフ業務"
+    when "Reservation input"
       "予約登録"
     end
   end

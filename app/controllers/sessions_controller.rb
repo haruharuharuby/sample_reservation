@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       log_in admin
       redirect_to home_path
     else
-      flash.now[:danger] = 'ログインIDまたはパスワードが間違っています。'
+      flash[:notice] = 'ログインIDまたはパスワードが間違っています。'
       render 'new'
     end
   end

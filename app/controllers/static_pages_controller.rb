@@ -7,8 +7,10 @@ class StaticPagesController < ApplicationController
 
   def about
     @staff = Staff.all
+    @user = User.all
   end
 
   def resevation
+
   end
 end

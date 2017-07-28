@@ -6,8 +6,10 @@
         <% if logged_in? %>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "予約管理", home_path %></li>
-          <li><%= link_to "スタッフ業務", about_path %></li>
-          <li><%= link_to "顧客管理", resevation_path %></li>
+          <li><%= link_to "スタッフ業務", staff_path %></li>
+          <% if @current_user %> <!--　顧客が特定されている場合のみ表示 -->
+            <li><%= link_to "顧客管理", "/users/#{@current_user.id}" %></li>
+          <% end %>
           <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         </ul>
         <% end %>

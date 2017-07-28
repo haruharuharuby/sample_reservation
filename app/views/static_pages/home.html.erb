@@ -1,22 +1,21 @@
 <% provide(:title, "Reservation Management") %>
-<div>
+<div class="res-manage">
   <!-- 検索 -->
   <%= form_for(:session, url: login_path) do |f| %>
   <div class="container">
-    <div class="row home_seach">
+    <div class="row search">
       <div class="col-sm-2 col-xs-6">日付</div>
-      <div class="col-sm-4 col-xs-6"></div>
-      </div>
+      <div class="col-sm-4 col-xs-6"><input type="date" class="selectdate"></div>
       <div class="col-sm-2 col-xs-6">時間</div>
       <div class="col-sm-4 col-xs-6"><%= f.collection_select :id, @course, :id, :name, :include_blank => true %></div>
     </div>
-    <div class="row home_seach">
+    <div class="row search">
       <div class="col-sm-2 col-xs-6">インストラクター名</div>
       <div class="col-sm-4 col-xs-6"><%= f.collection_select :id, @staff, :id, :name, :include_blank => true %></div>
       <div class="col-sm-2 col-xs-6">コース名</div>
       <div class="col-sm-4 col-xs-6"><%= f.collection_select :id, @course, :id, :name, :include_blank => true %></div>
     </div>
-    <div class="row home_seach">
+    <div class="row search">
       <div class="col-sm-2 col-xs-6">顧客名</div>
       <div class="col-sm-4 col-xs-6"><%= f.collection_select :id, @staff, :id, :name, :include_blank => true %></div>
     </div>

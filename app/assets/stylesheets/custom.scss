@@ -21,6 +21,11 @@ section {
 textarea {
   resize: vertical;
 }
+
+li {
+  list-style: none;
+}
+
 .page-title {
   background: lightgray;
   text-align: center;
@@ -36,3 +41,50 @@ textarea {
 .login label{
   margin-top: 10px;
 }
+
+/* 予約管理 */
+.res-manage .selectdate {
+  background: #e6e6e6;
+  border-radius: 5px;
+}
+
+/* スタッフ業務 */
+.staff {
+
+}
+.select-staff {
+  border: 1px solid red;
+}
+
+.select-staff p {
+  float: left;
+  margin-right: 30px;
+}
+
+.member-list {
+  border: 1px solid blue;
+  margin-top: 30px;
+}
+.user-table tr,th,td{
+  padding: 20px 40px;
+  border: 1px solid gray;
+}
+
+/* 顧客管理 */
+.custom-manage {
+  border: 1px solid red;
+}
+
+.custom-manage table {
+  margin-top: 20px;
+}
+
+.custom-manage h2 {
+  text-align: center;
+}
+
+.custom-manage p {
+  float: right;
+}
+
+/* 顧客情報編集 */

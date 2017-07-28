@@ -1,0 +1,19 @@
+<% provide(:title, "Edit Customer Information") %>
+
+<div class="custom-edit">
+  <div class="container">
+    <%= form_tag("/users/#{@current_user.id}/update") do %>
+      <div class="form">
+       <div class="form-body">
+         <table class="table table-bordered">
+           <tbody>
+             <tr><td>電話番号</td><td><input type="text" name="user[tel]" value="<%= @current_user.tel %>"></td></tr>
+             <tr><td>メールアドレス</td><td><input type="text" value="<%= @current_user.mail %>"></td></tr>
+           </tbody>
+         </table>
+         <input type="submit" value="更新する" class="btn btn-primary center-block">
+       </div>
+     </div>
+    <% end %>
+   </div>
+</div>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action:set_current_user, only:[:show]
+  before_action:set_current_user, only:[:show, :edit]
 
   def index
     @staff = Staff.all
@@ -11,8 +11,11 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def set_current_user
-    @current_user = User.find_by(params[:id])
+    @current_user = User.find_by(id:params[:id])
   end
 
 end

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/staff', to: 'users#index'
   get '/users/:id', to: 'users#show'
+  get 'users/:id/edit', to: 'users#edit'
+  post 'users/:id/update', to: 'users#update'
   resources :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

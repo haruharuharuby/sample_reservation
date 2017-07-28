@@ -20,8 +20,8 @@ module ApplicationHelper
       "スタッフ業務"
     when "Reservation input"
       "予約登録"
-    when "Customer Management"
-      "顧客管理"
+    when "Customer information"
+      "顧客情報"
     when "Edit Customer Information"
       "顧客情報編集"
     end

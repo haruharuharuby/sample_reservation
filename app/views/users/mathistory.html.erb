@@ -1,5 +1,15 @@
 <% provide(:title, "Material purchase history") %>
 
 <div class="material-history">
-    <h2><%= @current_user.name %></h2>
+  <h2><%= @current_user.name %></h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr><th>購入No</th><th>日付</th><th>物販名</th><th>金額</th></tr>
+    </thead>
+    <% @items.each do |item| %>
+      <tbody>
+        <tr><td><%= item.id %></td><td><%= item.date %></td><td><%= item.name %></td><td>¥<%= item.price %></td></tr>
+      </tbody>
+    <% end %>
+  </table>
 </div>

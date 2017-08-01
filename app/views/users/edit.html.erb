@@ -2,6 +2,7 @@
 
 <div class="custom-edit">
   <div class="container">
+    <h2><%= @current_user.name %></h2>
     <%= form_tag("/users/#{@current_user.id}/update") do %>
       <div class="form">
        <div class="form-body">

@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def index
     @staff = Staff.all
     @user = User.all
-
   end
 
   # showアクションを追加してください
@@ -14,11 +13,25 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @current_user
-      flash[:notice] = "更新しました"
-      redirect_to 'show'
+    @count = 0
+    if @current_user.tel != params[:tel]
+      @current_user.tel = params[:tel]
+      @count += 1
+    end
+    if @current_user.mail != params[:mail]
+      @current_user.mail = params[:mail]
+      @count += 1
+    end
+
+    if @count >= 1
+      if  @current_user.save
+        flash[:notice] = "更新しました"
+        redirect_to("/users/#{@current_user.id}")
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to("/users/#{@current_user.id}")
     end
   end
 
@@ -26,6 +39,10 @@ class UsersController < ApplicationController
   end
 
   def mathistory
+     @items= Purchase.left_outer_joins(:material)
+      .select("purchases.*, materials.*")
+      .where(purchases: {user_id: @current_user.id})
+      .order(id: :desc)
   end
 
 end

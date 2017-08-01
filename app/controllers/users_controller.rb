@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
   def mathistory
      @items= Purchase.left_outer_joins(:material)
-      .select("purchases.*, materials.*")
+      .select("purchases.id, purchases.date, materials.name, materials.price")
       .where(purchases: {user_id: @current_user.id})
       .order(id: :desc)
   end

@@ -26,6 +26,10 @@ li {
   list-style: none;
 }
 
+h2 {
+  text-align: center;
+}
+
 .page-title {
   background: lightgray;
   text-align: center;
@@ -79,12 +83,23 @@ li {
   margin-top: 20px;
 }
 
-.custom-manage h2 {
-  text-align: center;
-}
-
 .custom-manage p {
   float: right;
 }
 
 /* 顧客情報編集 */
+
+/* footer */
+footer {
+  text-align: center;
+  border-top: 1px solid lightgray;
+  margin-top: 30px;
+}
+
+footer li {
+  display: inline-block;
+}
+
+footer li:first-child {
+  border-left: none;
+}

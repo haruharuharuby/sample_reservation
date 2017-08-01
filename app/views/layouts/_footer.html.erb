@@ -1,0 +1,20 @@
+
+<footer>
+  <div class="container">
+    <% if logged_in? %>
+      <ul>
+        <li><%= link_to "予約管理", home_path %></li>
+        <li class="split">|</li>
+        <li><%= link_to "スタッフ業務", staff_path %></li>
+        <% if @current_user %>
+          <li class="split">|</li>
+          <li><%= link_to "顧客情報", "/users/#{@current_user.id}" %></li>
+          <li class="split">|</li>
+          <li><%= link_to "予約履歴", "/users/#{@current_user.id}/reshistory" %></li>
+          <li class="split">|</li>
+          <li><%= link_to "物販購入履歴", "/users/#{@current_user.id}/mathistory" %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</footer>

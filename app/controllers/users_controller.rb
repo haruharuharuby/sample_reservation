@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action:set_current_user, only:[:show, :edit]
-
+  before_action:set_current_user, {only: [:show, :edit, :update, :reshistory, :mathistory]}
   def index
     @staff = Staff.all
     @user = User.all
@@ -14,8 +13,19 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def set_current_user
-    @current_user = User.find_by(id:params[:id])
+  def update
+    if @current_user
+      flash[:notice] = "更新しました"
+      redirect_to 'show'
+    else
+      render 'edit'
+    end
+  end
+
+  def reshistory
+  end
+
+  def mathistory
   end
 
 end

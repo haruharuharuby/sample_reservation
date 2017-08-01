@@ -24,6 +24,10 @@ module ApplicationHelper
       "顧客情報"
     when "Edit Customer Information"
       "顧客情報編集"
+    when "Reservation history"
+      "予約履歴"
+    when "Material purchase history"
+      "物販購入履歴"
     end
   end
 end

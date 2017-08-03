@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801030322) do
+ActiveRecord::Schema.define(version: 20170803012933) do
 
   create_table "admins", primary_key: ["id", "loginid"], force: :cascade do |t|
     t.integer "id", null: false
@@ -47,6 +47,27 @@ ActiveRecord::Schema.define(version: 20170801030322) do
     t.string "date"
     t.integer "user_id"
     t.integer "material_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservationframes", primary_key: ["id", "no"], force: :cascade do |t|
+    t.integer "id", null: false
+    t.integer "no", null: false
+    t.integer "facility_id"
+    t.integer "course_id"
+    t.string "date"
+    t.string "time"
+    t.integer "staff_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["id", "no"], name: "sqlite_autoindex_reservationframes_1", unique: true
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "no"
+    t.integer "user_id"
+    t.boolean "flag", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

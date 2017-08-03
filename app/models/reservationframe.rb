@@ -1,0 +1,2 @@
+class Reservationframe < ApplicationRecord
+end

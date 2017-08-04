@@ -6,9 +6,14 @@
     <thead>
       <tr><th>購入No</th><th>日付</th><th>物販名</th><th>金額</th></tr>
     </thead>
-    <% @items.each do |item| %>
+    <% @details.each do |d| %>
       <tbody>
-        <tr><td><%= item.id %></td><td><%= item.date %></td><td><%= item.name %></td><td>¥<%= item.price %></td></tr>
+        <tr>
+          <td><%= d.id %></td>
+          <td><%= d.date %></td>
+          <td><%= d.material.name %></td>
+          <td>¥<%= d.material.price %></td>
+        </tr>
       </tbody>
     <% end %>
   </table>

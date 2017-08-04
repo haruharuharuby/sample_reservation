@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803012933) do
+ActiveRecord::Schema.define(version: 20170804030509) do
 
   create_table "admins", primary_key: ["id", "loginid"], force: :cascade do |t|
     t.integer "id", null: false
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20170803012933) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.index ["id", "loginid"], name: "sqlite_autoindex_admins_1", unique: true
   end
 
   create_table "courses", force: :cascade do |t|
@@ -51,9 +50,7 @@ ActiveRecord::Schema.define(version: 20170803012933) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "reservationframes", primary_key: ["id", "no"], force: :cascade do |t|
-    t.integer "id", null: false
-    t.integer "no", null: false
+  create_table "reservationframes", force: :cascade do |t|
     t.integer "facility_id"
     t.integer "course_id"
     t.string "date"
@@ -61,15 +58,16 @@ ActiveRecord::Schema.define(version: 20170803012933) do
     t.integer "staff_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["id", "no"], name: "sqlite_autoindex_reservationframes_1", unique: true
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "no"
+    t.integer "reservationframe_id"
     t.integer "user_id"
     t.boolean "flag", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "reservationno"
+    t.boolean "status"
   end
 
   create_table "staffs", force: :cascade do |t|

@@ -16,6 +16,8 @@ module ApplicationHelper
       "ログイン"
     when "Reservation Management"
       "予約管理"
+    when "Reservation details"
+      "予約詳細"
     when "Staff service"
       "スタッフ業務"
     when "Reservation input"

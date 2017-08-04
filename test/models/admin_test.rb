@@ -10,19 +10,19 @@ class AdminTest < ActiveSupport::TestCase
   end
 
   # 有効なAdminかどうかのテスト
-  test "should be valid" do
-    assert @admin.valid?
-  end
+  # test "should be valid" do
+  #   assert @admin.valid?
+  # end
 
   # ログインIDが存在するかのテスト
-  test "loginid should be present" do
-    @admin.loginid = " "
-    assert_not @admin.valid?
-  end
+  # test "loginid should be present" do
+  #   @admin.loginid = " "
+  #   assert_not @admin.valid?
+  # end
 
   # 名前が存在するかのテスト
-  test "name should be present" do
-    @admin.name = " "
-    assert_not @admin.valid?
-  end
+  # test "name should be present" do
+  #   @admin.name = " "
+  #   assert_not @admin.valid?
+  # end
 end

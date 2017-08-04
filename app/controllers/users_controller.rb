@@ -36,13 +36,22 @@ class UsersController < ApplicationController
   end
 
   def reshistory
+    @details = Reservation.includes(reservationframe: [:facility, :course, :staff])
+              .where(user_id: @current_user.id).order(id: :desc)
+        # histories = @details.map{|d| ReservationHistory.new(
+        #   date: d.reservationframe.date,
+        #   time: d.reservationframe.time,
+        #   state: ??,
+        #   no: d.id,
+        #   facility: d.facility.name,
+        #   course: d.course.name,
+        #   instructor: d.instructor.name)
+        # }
   end
 
   def mathistory
-     @items= Purchase.left_outer_joins(:material)
-      .select("purchases.id, purchases.date, materials.name, materials.price")
-      .where(purchases: {user_id: @current_user.id})
-      .order(id: :desc)
+     @details= Purchase.includes(:material)
+      .where(purchases: {user_id: @current_user.id}).order(id: :desc)
   end
 
 end

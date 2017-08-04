@@ -28,12 +28,21 @@ li {
 
 h2 {
   text-align: center;
+  font-size: 18px;
+}
+
+th,td, p{
+  font-size: 8px;
 }
 
 .page-title {
   background: lightgray;
   text-align: center;
   margin: 30px auto;
+}
+
+.page-title h1 {
+  font-size: 18px;
 }
 
 .btn {
@@ -52,18 +61,63 @@ h2 {
   border-radius: 5px;
 }
 
+@media screen and (min-width: 768px) {
+  .page-title h1 {
+    font-size: 36px;
+  }
+
+  .page-title p {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  p, th,td, footer li {
+    font-size: 14px;
+  }
+} /* ----- media END ----- */
+
+
 /* スタッフ業務 */
-.select-staff p {
-  float: left;
-  margin-right: 30px;
+.staff {
+  width: 100%;
+  border: 1px solid red;
 }
 
-.member-list {
-  margin-top: 30px;
+.select-staff {
+  text-align: center;
+  border: 1px solid blue;
 }
-.user-table tr,th,td{
-  padding: 20px 40px;
+
+// .select-staff p {
+//   float: left;
+// }
+
+.member-list {
+  margin-top: 20px;
+}
+
+.member-list table {
+  margin: 0 auto;
+}
+
+.user-table tr, th, td {
+  padding: 5px 25px;
   border: 1px solid gray;
+}
+
+@media screen and (min-width: 768px) {
+  .user-table tr,th,td{
+    padding: 10px 30px;
+  }
+} /* ----- media END ----- */
+
+
+/* 予約詳細 */
+.reservation_list table{
+  border: none;
 }
 
 /* 顧客管理 */
@@ -77,11 +131,14 @@ h2 {
 
 /* 顧客情報編集 */
 
+/* 物販購入履歴 */
+
 /* footer */
 footer {
   text-align: center;
   border-top: 1px solid lightgray;
   margin-top: 30px;
+  font-size: 8px;
 }
 
 footer li {

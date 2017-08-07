@@ -19,8 +19,22 @@
       <div class="col-sm-2 col-xs-6">顧客名</div>
       <div class="col-sm-4 col-xs-6"><%= f.collection_select :id, @user, :id, :name, :include_blank => true %></div>
     </div>
-    <!-- 表示欄 -->
-  </div>
     <%= f.submit "検索する", class: "btn btn-primary center-block" %>
+  </div>
   <% end %>
+
+  <div class="reservation_detail">
+    <table>
+      <tr><th>日付</th><th>時間</th><th>コース名</th><th>インストラクター名</th><th>予約状況</th></tr>
+    <% @details.each do |d| %>
+      <tr>
+        <td><%= d.date %></td>
+        <td><%= d.time %></td>
+        <td><%= d.course.name %></td>
+        <td><%= d.staff.name %></td>
+        <td><li><%= link_to "◯", "/about/#{d.id}" %></li></td>
+      <tr>
+    <% end %>
+    </table>
+  </div>
 </div>

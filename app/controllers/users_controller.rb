@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @user = User.all
   end
 
-  # showアクションを追加してください
   def show
   end
 
@@ -14,12 +13,12 @@ class UsersController < ApplicationController
 
   def update
     @count = 0
-    if @current_user.tel != params[:tel]
-      @current_user.tel = params[:tel]
+    if @current_user.tel != params[:users][:tel]
+      @current_user.tel = params[:users][:tel]
       @count += 1
     end
-    if @current_user.mail != params[:mail]
-      @current_user.mail = params[:mail]
+    if @current_user.mail != params[:users][:mail]
+      @current_user.mail = params[:users][:mail]
       @count += 1
     end
 
@@ -38,15 +37,6 @@ class UsersController < ApplicationController
   def reshistory
     @details = Reservation.includes(reservationframe: [:facility, :course, :staff])
               .where(user_id: @current_user.id).order(id: :desc)
-        # histories = @details.map{|d| ReservationHistory.new(
-        #   date: d.reservationframe.date,
-        #   time: d.reservationframe.time,
-        #   state: ??,
-        #   no: d.id,
-        #   facility: d.facility.name,
-        #   course: d.course.name,
-        #   instructor: d.instructor.name)
-        # }
   end
 
   def mathistory

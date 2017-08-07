@@ -3,18 +3,14 @@
 <div class="custom-edit">
   <div class="container">
     <h2><%= @current_user.name %></h2>
-    <%= form_tag("/users/#{@current_user.id}/update") do %>
-      <div class="form">
-       <div class="form-body">
-         <table class="table table-bordered">
-           <tbody>
-             <tr><td>電話番号</td><td><input type="text" name="tel" value="<%= @current_user.tel %>" size="30"></td></tr>
-             <tr><td>メールアドレス</td><td><input type="text" name="mail" value="<%= @current_user.mail %>" size="30"></td></tr>
-           </tbody>
-         </table>
-         <input type="submit" value="更新する" class="btn btn-primary center-block">
-       </div>
-     </div>
+    <%= form_for(:users, url: "/users/#{@current_user.id}/update") do |f| %>
+      <label>電話番号</label>
+      <%= f.text_field :tel, value: @current_user.tel, class: 'form-control' %>
+
+      <label>メールアドレス</label>
+      <%= f.email_field :mail, value: @current_user.mail, class: 'form-control' %>
+
+      <%= f.submit "更新する", class: "btn btn-primary center-block" %>
     <% end %>
    </div>
 </div>

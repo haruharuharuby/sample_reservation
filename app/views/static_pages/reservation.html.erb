@@ -1,11 +1,8 @@
 <% provide(:title, "Reservation input") %>
+<div class="reservation-input">
+    <p><%= @target.date %>　<%= @target.time %>　<%= @target.staff.name %></p>
+    <p>　　<%= @target.course.name %></p>
 <div class="row">
-
-  <div class="reservation-group">
-    <p><%= @target.date %>　<%= @target.time %></p>
-    <p><%= @target.course.name %>　<%= @target.staff.name %></p>
-  </div>
-
   <div class="col-md-6 col-md-offset-3">
     <%= form_tag("/reservation/#{@target.id}", method: :get) do %>
       <%= text_field_tag :search %>
@@ -43,4 +40,5 @@
       <% end %>
     <%end %>
   </div>
+</div>
 </div>

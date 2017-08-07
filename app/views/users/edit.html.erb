@@ -1,7 +1,6 @@
 <% provide(:title, "Edit Customer Information") %>
 
 <div class="custom-edit">
-  <div class="container">
     <h2><%= @current_user.name %></h2>
     <%= form_for(:users, url: "/users/#{@current_user.id}/update") do |f| %>
       <label>電話番号</label>
@@ -12,5 +11,4 @@
 
       <%= f.submit "更新する", class: "btn btn-primary center-block" %>
     <% end %>
-   </div>
 </div>

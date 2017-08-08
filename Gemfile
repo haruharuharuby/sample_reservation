@@ -25,8 +25,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
-gem 'haml-rails'
-gem 'erb2haml'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

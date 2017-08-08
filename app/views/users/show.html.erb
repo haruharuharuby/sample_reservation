@@ -1,0 +1,12 @@
+<% provide(:title, "Customer information") %>
+
+<div class="custom-manage">
+  <h2><%= @current_user.name %></h2>
+  <p><%= link_to "編集", "/users/#{@current_user.id}/edit" %></p>
+  <table class="table table-bordered">
+    <tbody>
+      <tr><td>電話番号</td><td><%= @current_user.tel %></td></tr>
+      <tr><td>メールアドレス</td><td><%= @current_user.mail %></td></tr>
+    </tbody>
+  </table>
+</div>

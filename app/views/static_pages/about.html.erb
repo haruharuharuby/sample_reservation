@@ -1,0 +1,20 @@
+<% provide(:title, "Reservation details") %>
+
+<div class="about">
+  <div class="reservation-group">
+    <p><%= @target.date %>　<%= @target.time %></p>
+    <p><%= @target.course.name %>　<%= @target.staff.name %></p>
+  </div>
+
+  <div class="reservation_list">
+    <table>
+      <% @details.each do |d| %>
+        <tr>
+          <th><%= d.user.name %></th>
+          <td><%= button_to 'キャンセル' %></td>
+        </tr>
+      <% end %>
+      <tr><th colspan="2"><%= link_to "予約する", "/reservation/#{@target.id}" %></th></tr>
+    </table>
+  </div>
+</div>

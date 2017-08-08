@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title= sub_title(yield(:title))
+    = render 'layouts/setting'
+  %body
+    = render 'layouts/header'
+    .page-title
+      %h1= full_title(yield(:title))
+      %p= sub_title(yield(:title))
+    .container
+      - flash.each do |message_type, message|
+        %div{:class => "alert alert-#{message_type}"}= message
+      = yield
+      = render 'layouts/footer'
+      = debug(params) if Rails.env.development?

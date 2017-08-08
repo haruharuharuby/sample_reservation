@@ -1,0 +1,35 @@
+- provide(:title, "Reservation history")
+.reservation-history
+  %h2= @current_user.name
+  %table
+    %thead.table-border
+      %tr.dange
+        %th 日付
+        %th 時間
+        %th 予約状況
+        %th 予約番号
+      %tr
+        %th
+        %th 施設名
+        %th{:colspan => "2"} インストラクター名
+      %tr
+        %th
+        %th{:colspan => "3"} コース名
+    - @details.each do |d|
+      %tbody.table-border
+        %tr
+          %td= d.reservationframe.date
+          %td= d.reservationframe.time
+          %td
+            - if d.status
+              受講
+            - else
+              キャンセル
+          %td= d.reservationframe_id
+        %tr
+          %td
+          %td= d.reservationframe.facility.name
+          %td{:colspan => "2"}= d.reservationframe.staff.name
+        %tr
+          %td
+          %td{:colspan => "3"}= d.reservationframe.course.name

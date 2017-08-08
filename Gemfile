@@ -17,6 +17,8 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'haml-rails'
+gem 'erb2haml'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

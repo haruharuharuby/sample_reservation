@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/about/:id', to:'static_pages#about'
   get '/reservation/:id', to:'static_pages#reservation'
   post '/reservation/:id/create', to:'static_pages#create'
-  get '/admins/new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/staff', to: 'users#index'

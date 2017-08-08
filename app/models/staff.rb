@@ -1,3 +1,3 @@
 class Staff < ApplicationRecord
-  has_many :reservationframe
+  belongs_to :reservationframe
 end

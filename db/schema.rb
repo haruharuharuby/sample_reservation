@@ -42,6 +42,13 @@ ActiveRecord::Schema.define(version: 20170804030509) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "parchase_material_relations", force: :cascade do |t|
+    t.integer "parchase_id"
+    t.integer "material_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "purchases", force: :cascade do |t|
     t.string "date"
     t.integer "user_id"

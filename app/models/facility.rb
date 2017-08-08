@@ -1,3 +1,3 @@
 class Facility < ApplicationRecord
-  has_many :reservationframe
+  belongs_to :reservationframe
 end

@@ -31,8 +31,21 @@ h2 {
   font-size: 18px;
 }
 
-th,td, p{
+th,td, p, label, .form-control, .btn{
   font-size: 8px;
+}
+
+th, td {
+  border: 1px solid gray;
+  padding: 5px 10px;
+}
+
+table {
+  width: 100%;
+}
+
+label {
+  margin-top: 15px;
 }
 
 .page-title {
@@ -61,77 +74,77 @@ th,td, p{
   border-radius: 5px;
 }
 
-@media screen and (min-width: 768px) {
-  .page-title h1 {
-    font-size: 36px;
-  }
+.res-manage .container {
+  margin: 20px auto;
+}
 
-  .page-title p {
-    font-size: 20px;
+/* 予約詳細 */
+.reservation_list{
+  table{
+    text-align: center;
+    width: 30%;
   }
+}
 
-  h2 {
-    font-size: 26px;
+/* 予約登録 */
+.reservation-input {
+  width: 70%;
+  margin: 0 auto;
+  p {
+    text-align: center;
   }
-
-  p, th,td, footer li {
-    font-size: 14px;
-  }
-} /* ----- media END ----- */
-
+}
 
 /* スタッフ業務 */
 .staff {
-  width: 100%;
-  border: 1px solid red;
+  width: 30%;
+  margin: 0 auto;
 }
-
-.select-staff {
-  text-align: center;
-  border: 1px solid blue;
-}
-
-// .select-staff p {
-//   float: left;
-// }
 
 .member-list {
   margin-top: 20px;
 }
 
-.member-list table {
-  margin: 0 auto;
-}
-
-.user-table tr, th, td {
-  padding: 5px 25px;
-  border: 1px solid gray;
-}
-
-@media screen and (min-width: 768px) {
-  .user-table tr,th,td{
-    padding: 10px 30px;
+.user-table{
+  th, td {
+    text-align: center;
   }
-} /* ----- media END ----- */
-
-
-/* 予約詳細 */
-.reservation_list table{
-  border: none;
 }
 
 /* 顧客管理 */
-.custom-manage table {
-  margin-top: 20px;
-}
-
-.custom-manage p {
-  float: right;
+.custom-manage {
+  table {
+    margin-top: 20px;
+  }
+  p {
+    float: right;
+  }
 }
 
 /* 顧客情報編集 */
+.custom-edit {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* 予約履歴 */
+.reservation-history {
+    tr,th,td {
+    border: none;
+    padding: 5px  20px;
+  }
+}
+.reservation-history .table-border {
+  border: 1px solid gray;
+}
 
 /* 物販購入履歴 */
+.material-history {
+  th,td {
+    padding: 5px  20px;
+    border: 1px solid gray;
+  }
+}
 
 /* footer */
 footer {
@@ -148,3 +161,27 @@ footer li {
 footer li:first-child {
   border-left: none;
 }
+
+@media screen and (min-width: 768px) {
+  .page-title h1 {
+    font-size: 36px;
+  }
+
+  .page-title p {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  p, th,td, footer li , label, .form-control, .btn{
+    font-size: 16px;
+  }
+
+  .user-table {
+    tr,th,td{
+      padding: 10px 30px;
+    }
+  }
+} /* ----- media END ----- */
